@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Figma</title>
+  <link rel="stylesheet" href="./css/hamburger-menu.css">
+  <link rel="stylesheet" href="./css/slick.css">
+  <title>E-Commerce</title>
 </head>
 
 <body>
@@ -16,21 +18,30 @@
 
     <section class="section-1">
 
-      <header class="header container">
+      <div class="container">
 
+      <header class="header">
+        
         <div class="logo-header">
           <a href="/">
             <img src="./svg/logo-header.svg" alt="logo-header">
           </a>
         </div>
 
-        <nav class="nav-header">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact Us</a>
-        </nav>
-
+        <section class="top-nav">
+          <input id="menu-toggle" type="checkbox" />
+          <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+          <ul class="menu">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact Us</a></li>
+          </ul>
+        </section>
+     
       </header>
+    </div>
 
       <main class="main container">
 
@@ -167,19 +178,31 @@
 
         <div class="review-section-4">
 
+          <div class="slider single-item buttons btn">
+
+          <div>
           <img src="./svg/section-3-column-2.svg" alt="">
           <p>Amet in elementum nulla scelerisque dui, egestas at. Elit consectetur turpis elementum amet vitae et etiam nec. Varius volutpat hac adipiscing tincidunt pretium.</p>
           <h5>Angel Paulina</h5>
-
-          <div class="review-buttons">
-            <div class="btn-left">
-              <img src="./svg/section-4-btn-left.svg" alt="">
-            </div>
-            <div class="btn-right">
-              <img src="./svg/section-4-btn-right.svg" alt="">
-            </div>
           </div>
+
+          <div>
+            <img src="./svg/section-3-column-2.svg" alt="">
+            <p>Amet in elementum nulla scelerisque dui, egestas at. Elit consectetur turpis elementum amet vitae et etiam nec. Varius volutpat hac adipiscing tincidunt pretium.</p>
+            <h5>Angel Paulina</h5>
+          </div>
+
+          <div>
+              <img src="./svg/section-3-column-2.svg" alt="">
+              <p>Amet in elementum nulla scelerisque dui, egestas at. Elit consectetur turpis elementum amet vitae et etiam nec. Varius volutpat hac adipiscing tincidunt pretium.</p>
+              <h5>Angel Paulina</h5>
+          </div>
+
         </div>
+
+        </div>
+
+      
 
         <div class="phones-section-4">
           <img src="./svg/section-4-phones.svg" alt="">
@@ -266,6 +289,10 @@
     </footer>
 
   </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/slick.min.js"></script>
+	<script type="text/javascript" src="./js/script.js"></script>
 
 </body>
 

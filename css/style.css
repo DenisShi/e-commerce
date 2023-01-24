@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Objective";
-  src: local("Objective"), url("/fonts/Objective_Woff2/Objective-Regular.woff2") format("woff2");
+  src: local("Objective"), url("../fonts/Objective_Woff2/Objective-Regular.woff2") format("woff2");
 }
 html {
   box-sizing: border-box;
@@ -24,6 +24,14 @@ a {
   background: linear-gradient(#f2f8fc, white);
 }
 
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 45px;
+}
+
 .section-1 {
   height: 100vh;
   box-shadow: 0px 4px 16px rgba(75, 0, 129, 0.06);
@@ -41,26 +49,6 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.header {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 45px;
-}
-
-.nav-header a {
-  font-size: 18px;
-  color: #0f001a;
-  margin-right: 50px;
-}
-.nav-header a:last-child {
-  margin-right: 0;
-}
-.nav-header a:focus, .nav-header a:hover {
-  color: #4a99d3;
 }
 
 .main-info {
@@ -299,37 +287,6 @@ a {
   width: 418px;
 }
 
-.review-buttons {
-  margin-left: 75%;
-  transform: translateX(-50%);
-  margin-top: 37px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.review-buttons .btn-left {
-  justify-self: right;
-  width: 80px;
-  height: 80px;
-  transition: opacity 0.1s ease;
-}
-.review-buttons .btn-left:hover, .review-buttons .btn-left:focus {
-  opacity: 85%;
-}
-.review-buttons .btn-right {
-  width: 80px;
-  height: 80px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-  transition: opacity 0.1s ease;
-}
-.review-buttons .btn-right:hover, .review-buttons .btn-right:focus {
-  opacity: 85%;
-}
-.review-buttons .btn-right img {
-  margin: auto;
-  padding-top: 25%;
-}
-
 .phones-section-4 {
   margin-top: 158px;
   margin-left: -50%;
@@ -351,6 +308,45 @@ a {
   line-height: 24px;
   color: #0f001a;
   opacity: 0.5;
+}
+
+.slider {
+  width: 418px;
+}
+
+.slider .slick-arrow {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 0;
+  width: 80px;
+  height: 80px;
+  border: 0;
+}
+
+.slider .slick-arrow.slick-prev {
+  left: 62%;
+  background: url("../svg/section-4-btn-left.svg") 0 0/100% no-repeat;
+  transition: opacity 0.1s ease;
+}
+.slider .slick-arrow.slick-prev:hover {
+  opacity: 0.8;
+}
+
+.slider .slick-arrow.slick-next {
+  background: url("../svg/section-4-btn-right-1.svg") center no-repeat;
+  width: 80px;
+  height: 80px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  background-color: white;
+  transition: opacity 0.1s ease;
+}
+.slider .slick-arrow.slick-next:hover {
+  opacity: 0.8;
 }
 
 .footer {
@@ -457,6 +453,7 @@ a {
   font-weight: 700;
   font-size: 10.41px;
   line-height: 11px;
+  margin: auto 0;
 }
 .footer-bottom .links a {
   margin-right: 25px;
@@ -465,7 +462,6 @@ a {
   margin-right: 0;
 }
 
-/* MEDIA */
 /* PC */
 @media (min-width: 1455px) {
   .container {
@@ -531,7 +527,7 @@ a {
   }
   .phones-section-4 {
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 200px;
   }
   .column-1-back {
     position: static;
@@ -548,14 +544,10 @@ a {
 }
 /* MOBILE */
 @media (max-width: 767.98px) {
-  .nav-header {
-    display: flex;
-    margin-top: 30px;
-    align-self: right;
-    margin: auto 0;
-  }
-  .nav-header a {
-    margin-right: 3.47vw;
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 15px;
   }
   .main-btn a:first-child {
     margin: 0;
@@ -587,7 +579,7 @@ a {
   }
 }
 /* SMALL */
-@media (max-width: 500px) {
+@media (max-width: 529px) {
   .container,
 .footer-container {
     width: 100%;
@@ -600,21 +592,6 @@ a {
     flex-direction: row;
     align-items: flex-start;
     padding-top: 15px;
-  }
-  .nav-header {
-    display: flex;
-    flex-direction: column;
-  }
-  .nav-header a {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 150%;
-  }
-  .nav-header a {
-    display: flex;
-    margin: auto 0;
-    padding-bottom: 10px;
-    justify-content: right;
   }
   .main-info {
     min-width: 100%;
@@ -644,14 +621,6 @@ a {
   }
   .review-section-4 {
     width: 100%;
-  }
-  .review-section-4 .review-buttons {
-    width: 100%;
-  }
-  .review-buttons {
-    margin-left: 50%;
-    margin-top: 37px;
-    justify-self: center;
   }
   .footer-logo {
     margin-top: 5px;
