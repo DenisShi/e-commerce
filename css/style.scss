@@ -101,6 +101,18 @@ a {
 
 ////////// SECTION-2
 
+.background::after {
+   content: "";
+   display: block;
+   background: url(../img/back-rect-1.svg) no-repeat;
+   position: absolute;
+   top: 95%;
+   bottom: 0;
+   left: 50%;
+   right: 0;
+   z-index: 2;
+}
+
 .content {
    margin-top: 150px;
    display: grid;
@@ -151,21 +163,8 @@ a {
 .section-2-send {
    justify-self: right;
    position: relative;
-   z-index: 2;
    img {
       margin-top: -24px;
-   }
-}
-
-.background {
-   position: absolute;
-   z-index: 0;
-   width: 100%;
-   display: flex;
-   justify-content: right;
-   margin-top: -150px;
-   .back-rect-1 {
-      position: absolute;
    }
 }
 
@@ -194,24 +193,18 @@ a {
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   vertical-align: middle;
    margin: 52px 0 48px 0;
-   a {
-      margin: 0;
-      padding: 0;
-      vertical-align: middle;
-      width: 100%;
-      font-size: 14px;
-      line-height: 30px;
-      color: $color-blue;
-      display: inline-block;
-      background: url(../svg/section-2-arrow.svg) no-repeat 95% center;
-      transition: 0.2s all;
+   width: 115px;
+   font-size: 14px;
+   line-height: 30px;
+   color: $color-blue;
+   display: inline-block;
+   background: url(../img/section-2-arrow.svg) no-repeat 95% center;
+   transition: 0.2s all;
 
-      &:hover,
-      &:focus {
-         background: url(../svg/section-2-arrow.svg) no-repeat right center;
-      }
+   &:hover,
+   &:focus {
+      background: url(../img/section-2-arrow.svg) no-repeat right center;
    }
 }
 
@@ -314,11 +307,12 @@ a {
    width: 80px;
    height: 80px;
    border: 0;
+   cursor: pointer;
 }
 
 .slider .slick-arrow.slick-prev {
    right: 80px;
-   background: url("../svg/section-4-btn-left.svg") 0 0 / 100% no-repeat;
+   background: url("../img/section-4-btn-left.svg") 0 0 / 100% no-repeat;
    transition: opacity 0.1s ease;
    &:hover {
       opacity: 0.8;
@@ -326,7 +320,7 @@ a {
 }
 
 .slider .slick-arrow.slick-next {
-   background: url("../svg/section-4-btn-right-1.svg") center no-repeat;
+   background: url("../img/section-4-btn-right-1.svg") center no-repeat;
    width: 80px;
    height: 80px;
    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
@@ -339,6 +333,7 @@ a {
 }
 
 .review-wrap {
+   margin: 0 auto;
    max-width: 1230px;
 }
 
@@ -519,6 +514,10 @@ a {
       column-gap: 10px;
    }
 
+   .review-wrap {
+      width: 70%;
+   }
+
    .footer-container {
       width: 90%;
       flex-direction: column;
@@ -559,11 +558,6 @@ a {
    }
 
    .content {
-      /////
-      position: relative;
-      z-index: 5;
-      /////
-
       column-gap: 10px;
 
       .section-2-receive {
@@ -612,7 +606,7 @@ a {
    }
 
    .review-wrap {
-      width: 100%;
+      width: 95%;
    }
 
    .main-btn {
@@ -752,5 +746,14 @@ a {
    }
    .footer-subscribe {
       width: 90%;
+   }
+   .subscribe-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      input,
+      a {
+         margin-top: 10px;
+      }
    }
 }
