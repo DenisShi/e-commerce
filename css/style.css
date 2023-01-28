@@ -90,15 +90,17 @@ a {
   content: "";
   display: block;
   background: url(../img/back-rect-1.svg) no-repeat;
-  position: absolute;
-  top: 95%;
-  bottom: 0;
+  position: relative;
+  top: 300px;
   left: 50%;
-  right: 0;
-  z-index: 2;
+  width: 190px;
+  height: 199px;
+  z-index: 0;
 }
 
 .content {
+  position: relative;
+  z-index: 5;
   margin-top: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr;
